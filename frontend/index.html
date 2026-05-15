@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gowtham Doppalapudi | Java Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&family=Raleway:wght@800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="loading-screen">
+  <div class="loader-ring"></div>
+  <div class="loader-text">Loading Portfolio…</div>
+</div>
+
+<div id="scroll-progress"></div>
+<canvas id="anime-bg"></canvas>
+<div class="glow-orb glow1"></div>
+<div class="glow-orb glow2"></div>
+<div class="glow-orb glow3"></div>
+
+<nav>
+  <a href="#" class="nav-logo">Gowtham Doppalapudi</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Tech Stack</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────── -->
+<section id="hero">
+  <div class="floating-tech" id="floatingTech"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"></div>
+    <h1 class="hero-name"></h1>
+    <p class="hero-role"></p>
+    <div class="tech-pill-row"></div>
+    <div class="hero-stats"></div>
+    <div class="hero-btns">
+      <a href="#experience" class="btn btn-primary">View Experience</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="arrow"></div>
+    Scroll
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── About ─────────────────────────────────────────── -->
+<div class="section-wrap">
+<section id="about">
+  <div class="section-eyebrow">About Me</div>
+  <div class="about-grid">
+    <div class="about-text reveal-left"></div>
+    <div class="reveal-right">
+      <div class="cert-panel"></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── Skills ─────────────────────────────────────────── -->
+<div class="section-wrap">
+<section id="skills">
+  <div class="section-eyebrow">Technologies</div>
+  <h2 class="section-title">Tech Stack</h2>
+  <p class="section-sub">Tools and technologies I use to build robust, production-grade applications.</p>
+  <div class="tech-section reveal"></div>
+</section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── Experience ─────────────────────────────────────── -->
+<div class="section-wrap">
+<section id="experience">
+  <div class="section-eyebrow">Work History</div>
+  <h2 class="section-title">Professional Experience</h2>
+  <p class="section-sub">6+ years across enterprise-level engineering environments in the US and India.</p>
+  <div class="timeline"></div>
+</section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── Education ─────────────────────────────────────── -->
+<div class="section-wrap">
+<section id="education">
+  <div class="section-eyebrow">Education</div>
+  <h2 class="section-title">Academic Background</h2>
+  <p class="section-sub">Formal education and professional certifications in Computer Science.</p>
+  <div class="edu-grid"></div>
+</section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── Contact ───────────────────────────────────────── -->
+<div class="section-wrap">
+<section id="contact">
+  <div class="contact-center">
+    <div class="section-eyebrow" style="justify-content:center;">Contact</div>
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="section-sub" style="margin:0 auto 0;">Open to full-time roles, consulting, and technical collaborations.</p>
+    <div class="contact-cards reveal"></div>
+    <div class="contact-form-wrap reveal">
+      <div class="form-title">Send a Message</div>
+      <form id="contactForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="cf-name">Full Name</label>
+            <input class="form-input" type="text" id="cf-name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-email">Email Address</label>
+            <input class="form-input" type="email" id="cf-email" name="email" placeholder="jane@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-phone">Phone (optional)</label>
+            <input class="form-input" type="tel" id="cf-phone" name="phone" placeholder="+1 (555) 000-0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-subject">Subject</label>
+            <input class="form-input" type="text" id="cf-subject" name="subject" placeholder="Job Opportunity / Collaboration" required>
+          </div>
+          <div class="form-group full">
+            <label class="form-label" for="cf-message">Message</label>
+            <textarea class="form-textarea" id="cf-message" name="message" placeholder="Tell me about the role, project, or how I can help you…" required></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary form-submit">Send Message &rarr;</button>
+          <p class="form-note">I'll reply within 24 hours.<br>Your details stay private.</p>
+        </div>
+        <div class="form-error" id="formError"></div>
+        <div class="form-success" id="formSuccess">✦ Message sent! I'll get back to you soon.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer>
+  <p>Designed &amp; Built by <strong>Gowtham Doppalapudi</strong> &nbsp;·&nbsp; Java Full Stack Developer &nbsp;·&nbsp; Texas, USA &nbsp;·&nbsp; © 2026</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
