@@ -1,10 +1,8 @@
 const CDN = 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/';
-const API = '/api';
 
 async function loadPortfolio() {
-  const res  = await fetch(`${API}/portfolio`);
-  const json = await res.json();
-  return json.data;
+  const res  = await fetch('./data/portfolio.json');
+  return res.json();
 }
 
 function chipImg(chip) {
@@ -295,35 +293,18 @@ function initStatCounter() {
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
-  form.addEventListener('submit', async e => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    const btn = form.querySelector('.form-submit');
-    const errEl = form.querySelector('.form-error');
-    btn.textContent = 'Sending…'; btn.disabled = true;
-    errEl.style.display = 'none';
-    try {
-      const payload = Object.fromEntries(new FormData(form));
-      const res = await fetch(`${API}/contact`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      const json = await res.json();
-      if (json.success) {
-        form.reset();
-        document.getElementById('formSuccess').style.display = 'block';
-        btn.style.display = 'none';
-        form.querySelector('.form-note').style.display = 'none';
-      } else {
-        errEl.textContent = json.message || 'Failed — please try again.';
-        errEl.style.display = 'block';
-        btn.textContent = 'Send Message →'; btn.disabled = false;
-      }
-    } catch {
-      errEl.textContent = 'Network error — please try again.';
-      errEl.style.display = 'block';
-      btn.textContent = 'Send Message →'; btn.disabled = false;
-    }
+    const payload = Object.fromEntries(new FormData(form));
+    const subject = encodeURIComponent(payload.subject || 'Portfolio Inquiry');
+    const body    = encodeURIComponent(
+      `Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone || 'N/A'}\n\n${payload.message}`
+    );
+    window.location.href = `mailto:gowthamdoppalapudi369@gmail.com?subject=${subject}&body=${body}`;
+    form.reset();
+    document.getElementById('formSuccess').style.display = 'block';
+    form.querySelector('.form-submit').style.display = 'none';
+    form.querySelector('.form-note').style.display = 'none';
   });
 }
 
